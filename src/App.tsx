@@ -7,6 +7,7 @@ import WelcomeLoader from "./components/WelcomeLoader";
 import { useAuth } from "./context/AuthContext";
 import React from "react";
 import Login from "./pages/Login/Login";
+import Signup from "./pages/Login/Signup";
   
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
 
   if (loading) return <WelcomeLoader />;
 
-  if (!isAuthenticated) return <Login theme={"light"} />;
+  if (!isAuthenticated) return <Signup theme={"light"} />;
 
 
   return (

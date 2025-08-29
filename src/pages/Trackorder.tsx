@@ -12,7 +12,7 @@ const TrackOrder = () => {
     return (
       <div className={styles.empty}>
         <h2>Order Not Found ❌</h2>
-        <Link to="/orders" className={styles.backBtn}>
+        <Link to="/orderhistory" className={styles.backBtn}>
           Back to My Orders
         </Link>
       </div>
