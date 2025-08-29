@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./ProductCard.module.css";
 import { useWishlist } from "../context/WishlistContext";
-import { Product } from "../types/Product"; // ensure Product type exists
+import { Product } from "../types/Product"; 
 import { useRef } from "react";
 
 
@@ -9,7 +9,7 @@ type ProductCardProps = {
   id: number;
   title?: string;
   category?: string;
-  type?: string; // Required for Product type
+  type?: string; 
   image?: string;
   previewImage?: string;
   description?: string;

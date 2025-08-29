@@ -2,21 +2,19 @@ import { useState } from "react";
 import styles from "./components.module.css";
 
 interface ContactUs {
-
-    theme:"light" | "dark";
-    
+  theme: "light" | "dark";
 }
 
-
-
-const ContactUs:React.FC <ContactUs>= ({theme}) => {
+const ContactUs: React.FC<ContactUs> = ({ theme }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -32,7 +30,8 @@ const ContactUs:React.FC <ContactUs>= ({theme}) => {
     <section className={styles.contactSection}>
       <h2>Contact Us</h2>
       <p className={styles.contactText}>
-        Have questions or feedback? Feel free to reach out to us. We value your input and are always here to assist you with any inquiries you may have.
+        Have questions or feedback? Feel free to reach out to us. We value your
+        input and are always here to assist you with any inquiries you may have.
       </p>
 
       <form className={styles.contactForm} onSubmit={handleSubmit}>
@@ -60,7 +59,9 @@ const ContactUs:React.FC <ContactUs>= ({theme}) => {
           onChange={handleChange}
           required
         ></textarea>
-        <button type="submit" className={styles.submitBtn}>Send Message</button>
+        <button type="submit" className={styles.submitBtn}>
+          Send Message
+        </button>
       </form>
     </section>
   );

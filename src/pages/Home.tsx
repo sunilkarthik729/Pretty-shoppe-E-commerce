@@ -9,7 +9,7 @@ import ContactUs from "../components/ContactUs";
 import { Product } from "../types/Product";
 import ProductCard from "../components/ProductCard";
 import Faq from "../components/faqData";
-import Slider from "react-slick";
+
 
 interface HomeProps  {
   theme: "light" | "dark";

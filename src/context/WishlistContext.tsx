@@ -8,7 +8,7 @@ type WishlistContextType = {
 
 const WishlistContext = createContext<WishlistContextType>({
   wishlist: [],
-  toggleWishlist: () => {}, // placeholder should NOT throw error
+  toggleWishlist: () => {}, 
 });
 
 export const WishlistProvider = ({ children }: { children: ReactNode }) => {
@@ -17,10 +17,10 @@ export const WishlistProvider = ({ children }: { children: ReactNode }) => {
   const toggleWishlist = (product: Product) => {
     const exists = wishlist.find((p) => p.id === product.id);
     if (exists) {
-      // ✅ remove if already exists
+     
       setWishlist(wishlist.filter((p) => p.id !== product.id));
     } else {
-      // ✅ add if not exists
+      
       setWishlist([...wishlist, product]);
     }
   };

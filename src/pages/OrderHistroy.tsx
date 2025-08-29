@@ -1,24 +1,12 @@
-// src/pages/OrderHistory.tsx
-
-
-
-
-
-
-
 import { useOrders } from "../context/OrderContext";
 import { Link } from "react-router-dom";
 import styles from "./OrderHistory.module.css";
 
-
-
 interface OrderHistoryProps {
-    theme: "light" | "dark";
+  theme: "light" | "dark";
 }
 
-
-
-const OrderHistory:React.FC<OrderHistoryProps> = ({theme}) => {
+const OrderHistory: React.FC<OrderHistoryProps> = ({ theme }) => {
   const { orders } = useOrders();
 
   if (!orders || orders.length === 0) {
@@ -46,7 +34,11 @@ const OrderHistory:React.FC<OrderHistoryProps> = ({theme}) => {
                 <p className={styles.orderId}>Order ID: {order.id}</p>
                 <p className={styles.orderDate}>Placed on {order.date}</p>
               </div>
-              <span className={`${styles.status} ${styles[order.status.toLowerCase()]}`}>
+              <span
+                className={`${styles.status} ${
+                  styles[order.status.toLowerCase()]
+                }`}
+              >
                 {order.status}
               </span>
             </div>
@@ -55,14 +47,20 @@ const OrderHistory:React.FC<OrderHistoryProps> = ({theme}) => {
             <ul className={styles.itemsList}>
               {order.items?.map((item) => (
                 <li key={item.id} className={styles.item}>
-                  <img src={item.image} alt={item.title} className={styles.itemImg} />
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className={styles.itemImg}
+                  />
                   <div className={styles.itemInfo}>
                     <p className={styles.itemTitle}>{item.title}</p>
                     <p className={styles.itemQty}>
                       {item.quantity} × ₹{item.finalPrice}
                     </p>
                   </div>
-                  <p className={styles.itemPrice}>₹{item.finalPrice * item.quantity}</p>
+                  <p className={styles.itemPrice}>
+                    ₹{item.finalPrice * item.quantity}
+                  </p>
                 </li>
               ))}
             </ul>
@@ -82,4 +80,3 @@ const OrderHistory:React.FC<OrderHistoryProps> = ({theme}) => {
 };
 
 export default OrderHistory;
-

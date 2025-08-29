@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./CheckoutPage.module.css";
 import { useCart } from "../context/CartContext";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 interface CheckoutPageProps {
@@ -10,7 +10,7 @@ interface CheckoutPageProps {
 
 const CheckoutPage: React.FC <CheckoutPageProps> = ({theme}) => {
   const { cart } = useCart();
-  const { user } = useAuth();
+  
      const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {

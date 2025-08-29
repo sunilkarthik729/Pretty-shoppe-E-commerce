@@ -1,10 +1,7 @@
-
 import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Home from "./pages/Home";
 import MainRouter from "./router";
-import { WishlistProvider } from "./context/WishlistContext";
 import { useState, useEffect } from "react";
 import WelcomeLoader from "./components/WelcomeLoader";
 
