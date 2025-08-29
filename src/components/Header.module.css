@@ -1,0 +1,403 @@
+/* Common header style */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  padding: 12px 24px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Logo */
+.logo {
+  height: 140px;
+  width: auto;
+  cursor: pointer;
+}
+
+/* Right side */
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.navRight1{
+    display: flex;
+  align-items: center;
+  gap: 20px;
+}
+/* Login + Cart */
+.login,
+.cart {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  position: relative;
+  font-size: 22px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.cartCount {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+.login:hover,
+.cart:hover {
+  color: #1976d2;
+}
+
+/* Sections (Home, Contact, etc.) */
+.sections {
+  font-size: 1rem;  
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-decoration: none;
+  font-weight: 600;
+  color: #111;
+}
+.sections:hover {
+  color: #555;
+}
+
+/* Hamburger button (mobile only) */
+.menuButton {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile dropdown menu */
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  padding: 16px;
+  border-top: 1px solid #ddd;
+  animation: slideDown 0.3s ease;
+}
+
+.mobileMenu p {
+  margin-bottom: 12px;
+  color: #333;
+  font-weight: 500;
+}
+
+.mobileMenu p:hover {
+  color: #1976d2;
+}
+.slick-prev, .slick-next {
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 30px;
+  color: #1d3557;
+}
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 10px;
+}
+.Carousel-main-container{
+  display:flex;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none; /* scrollbar hide */
+}
+
+.carousel-container > * {
+  flex: 0 0 auto;        /* shrink/expand prevent */
+  scroll-snap-align: start;
+  width: 250px;          /* each card width */
+}
+/* Username + Logout */
+.userBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.logoutBtn {
+  background: #e63946;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 10px;
+  transition: background 0.3s ease;
+}
+
+.logoutBtn:hover {
+  background: #d62828;
+}
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+}
+.wishlist {
+  position: relative;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.wishlistCount {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.wishlistWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* wishlist icon */
+.wishlistIcon {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* dropdown */
+.wishlistDropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 250px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  padding: 10px;
+  z-index: 999;
+}
+
+/* prevent flicker: ensure dropdown stays within wrapper hover */
+.wishlistWrapper:hover .wishlistDropdown {
+  display: block;
+}
+.wishlistDropdown {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.wishlistWrapper:hover .wishlistDropdown {
+  display: block;
+  opacity: 1;
+}
+
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.dropdownItem img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+}
+
+.empty {
+  text-align: center;
+  color: gray;
+  font-size: 14px;
+  padding: 10px 0;
+}
+.header {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  background-color: #1976d2;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header.light {
+  background-color: #f8f8f8;
+}
+
+.header.dark {
+  background-color: #111;
+}
+
+.themeBtn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+
+.header.light .themeBtn {
+  background-color: #e2e2e2;
+  color: #111;
+}
+
+.header.dark .themeBtn {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Mobile menu extra style */
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  animation: slideDown 0.3s ease;
+  gap: 12px;
+}
+
+.mobileMenu hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+.mobileAuth {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobileWishlist {
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Mobile only: hide desktop navRight */
+@media (max-width: 768px) {
+  .navRight {
+    display: none; /* Hide top-right desktop items */
+  }
+  .navRight1 {
+    display: none;
+  }
+  .menuButton {
+    display: block;
+  }
+}
+
+
+
+/* Slide animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+  /* Hide normal nav in section 2 */
+  
+  .header .navRight1 {
+    display:none;
+
+  }
+
+  /* Show hamburger */
+  .menuButton {
+    display: block;
+  }
+
+  /* Show dropdown when active */
+  .mobileMenu {
+    display: flex;
+  }
+  .logo{
+        height:80px;
+  }
+}
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.header, .footer {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}

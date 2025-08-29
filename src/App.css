@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  border: 5px;
+}
+.light {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+}
+
+body, .app {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}

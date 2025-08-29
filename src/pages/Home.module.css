@@ -1,0 +1,299 @@
+/* Wrapper around banner and overlay */
+.bannerWrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+/* Banner Video */
+.banner {
+  width: 100%;
+  height: 100vh; /* full screen */
+  overflow: hidden;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay content */
+.overlay {
+  width: 30%;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: left;
+  color: #333;
+}
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+}
+.shopBtn {
+  width: 8rem;
+  padding: 8px 0;
+  font-size: 1.1rem;
+}
+/* About Preview */
+.aboutPreview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 8%;
+
+  gap: 40px;
+}
+
+.content {
+  flex: 1;
+  max-width: 400px;
+  z-index: 2;
+
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.learnBtn {
+  padding: 10px 25px;
+  background: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.learnBtn:hover {
+  background: #023e8a;
+  transform: translateY(-2px);
+}
+
+.imageBox {
+  flex: 2;
+}
+
+.image {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.ProductCardContainer {
+  display: flex;
+  justify-content: space-around;
+}
+.QA-main-container {
+  display: flex;
+  gap: 40px;
+  color: red;
+}
+/* BestSeller.module.css */
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* scrollbar hide */
+}
+
+.carousel-item {
+  flex: 0 0 80%; /* mobile - item width */
+  scroll-snap-align: start;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+}
+
+.carousel > div {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: 250px; /* square look */
+}
+
+.collectionsSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background: #fafafa;
+}
+
+.collectionCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+  background: #fff;
+}
+
+.collectionCard:hover {
+  transform: translateY(-8px);
+}
+
+.collectionImg {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid #eee;
+}
+
+.menImg {
+  background-image: url("../assets/1.png");
+}
+
+.womenImg {
+  background-image: url("../assets/womensCollection.png");
+}
+
+.collectionContent {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.collectionContent h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.collectionContent p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.exploreBtn {
+  background: #000;
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.exploreBtn:hover {
+  background: #444;
+}
+
+
+/* Desktop */
+@media (min-width: 768px) {
+  .carousel {
+    overflow-x: visible;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .carousel-item {
+    flex: 0 0 22%; /* 4 in row */
+  }
+  
+}
+
+.bestSeller {
+  font-size: 1.2rem;
+  padding: 10px;
+}
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .bannerWrapper {
+    position: relative;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white; /* transparent bg */
+    color: black;
+    width: 90%;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+  .aboutPreview {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .content {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .imageBox {
+    width: 100%;
+  }
+  
+}
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.header, .footer {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}

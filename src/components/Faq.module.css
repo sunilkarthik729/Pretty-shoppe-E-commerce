@@ -1,0 +1,93 @@
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  background: #fafafa;
+}
+
+.faqItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faqItem:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.faqContent {
+  flex: 1;
+}
+
+.faqContent h2 {
+  font-size: 1.5rem;
+  color: #111;
+  margin-bottom: 0.6rem;
+}
+
+.faqContent p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Alternate layout */
+.left {
+  flex-direction: row;
+}
+
+.right {
+  flex-direction: row-reverse;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faqItem {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .left,
+  .right {
+    flex-direction: column;
+  }
+}
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.header, .footer {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+/* Faq.module.css */
+.faqSection.light {
+  background: #fafafa;
+  color: #111;
+}
+
+.faqSection.dark {
+  background: #1e1e1e;
+  color: #f5f5f5;
+}
