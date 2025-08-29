@@ -48,3 +48,19 @@ body.dark {
   --text-secondary: #bbbbbb;
   --border: #333;
 }
+
+* { box-sizing: border-box; }
+img, picture, video { max-width: 100%; height: auto; display: block; }
+
+
+.container-max {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 1200px; 
+}
+
+
+h1 { font-size: clamp(1.6rem, 2.2vw, 2.6rem); }
+h2 { font-size: clamp(1.25rem, 1.6vw, 2rem); }
+p  { font-size: clamp(0.95rem, 1vw, 1rem); }

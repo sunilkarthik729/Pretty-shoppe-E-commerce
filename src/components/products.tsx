@@ -3,6 +3,7 @@ import styles from "./Products.module.css";
 import productsData from "../data/products.json";
 import { Product } from "../types/Product";
 import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 interface ProductListingProps {
   theme: "light" | "dark";
@@ -98,6 +99,11 @@ const ProductListing: React.FC<ProductListingProps>  = ({theme}) => {
                   >
                     Add to Cart
                   </button>
+                  <Link to={`/product/${item.id}`}>
+            <button className="bg-blue-600 text-white px-3 py-1 rounded-lg mt-2">
+              View Details
+            </button>
+          </Link>
                 </div>
               </div>
             ))}

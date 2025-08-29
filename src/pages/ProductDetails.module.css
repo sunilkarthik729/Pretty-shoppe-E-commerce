@@ -1,0 +1,217 @@
+/* Theme Wrappers */
+.light {
+  background: #f9f9f9;
+  color: #222;
+  min-height: 100vh;
+}
+
+.dark {
+  background: linear-gradient(to bottom, #111, #000);
+  color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* Not found text */
+.notFound {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: red;
+  font-weight: 600;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Card Layout */
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.imageSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainImage {
+  max-width: 100%;
+  max-height: 450px;
+  border-radius: 16px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.mainImage:hover {
+  transform: scale(1.05);
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.category {
+  background: #f3e8ff;
+  color: #6b21a8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+}
+
+.bestSeller {
+  background: #fef3c7;
+  color: #b45309;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+}
+
+/* Title + Rating */
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.rating {
+  color: #facc15;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.ratingValue {
+  color: #555;
+  font-size: 0.9rem;
+  margin-left: 6px;
+}
+
+/* Description */
+.description {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Pricing */
+.pricing {
+  margin-top: 1rem;
+}
+
+.finalPrice {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #16a34a;
+}
+
+.oldPrice {
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  color: #888;
+}
+
+.discount {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #dc2626;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.actions button {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cartBtn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+}
+
+.buyBtn {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+  border: none;
+}
+
+.wishlistBtn {
+  background: #f1f1f1;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.actions button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Extra Section */
+.extra {
+  margin-top: 3rem;
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.extraTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.extraList {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+  .mainImage {
+    max-height: 320px;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .actions button {
+    flex: 100%;
+  }
+}

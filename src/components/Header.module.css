@@ -11,9 +11,9 @@
 
 /* Logo */
 .logo {
-  height: 140px;
+  height: 80px;        /* default desktop */
   width: auto;
-  cursor: pointer;
+  max-height: 140px;   /* keep original max */
 }
 
 /* Right side */
@@ -400,4 +400,31 @@ body {
 
 .card:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+/* Mobile adjustments */
+@media (max-width: 992px) {
+  .logo { height: 72px; }
+  .navRight, .navRight1 { gap: 12px; }
+  .sections { font-size: 0.95rem; }
+}
+
+/* Tablet / small phones */
+@media (max-width: 768px) {
+  .logo { height: 56px; }
+  .menuButton { display: block; }
+  .navRight { display: none; }
+  .navRight1 { display: none; }
+
+  /* make header sections stack when hamburger open */
+  .mobileMenu {
+    padding: 16px;
+    gap: 10px;
+  }
+}
+
+/* Extra small: tighter spacing */
+@media (max-width: 420px) {
+  .logo { height: 48px; }
+  .username { font-size: 0.9rem; }
+  .cart, .login { font-size: 18px; }
 }

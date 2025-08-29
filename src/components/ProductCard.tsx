@@ -1,15 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./ProductCard.module.css";
 import { useWishlist } from "../context/WishlistContext";
-import { Product } from "../types/Product"; 
+import { Product } from "../types/Product";
 import { useRef } from "react";
-
 
 type ProductCardProps = {
   id: number;
   title?: string;
   category?: string;
-  type?: string; 
+  type?: string;
   image?: string;
   previewImage?: string;
   description?: string;
@@ -24,7 +23,7 @@ const ProductCard = (props: ProductCardProps) => {
   const imgRef = useRef<HTMLImageElement | null>(null);
   const navigate = useNavigate();
   const { wishlist, toggleWishlist } = useWishlist();
-  
+
   const productItem: Product = {
     id: props.id,
     title: props.title || "",
@@ -39,14 +38,20 @@ const ProductCard = (props: ProductCardProps) => {
     rating: props.rating || 0,
     bestSeller: props.bestSeller || false,
   };
-  
-  const isFavorite = wishlist.some((p) => p.id === props.id);
+
+  // ✅ check if already in wishlist
+  const isInWishlist = wishlist.some((p) => p.id === props.id);
 
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
         {props.image && (
-          <img src={props.image} alt={props.title} className={styles.image} />
+          <img
+            src={props.image}
+            alt={props.title}
+            className={styles.image}
+            ref={imgRef}
+          />
         )}
         {props.bestSeller && <span className={styles.badge}>Best Seller</span>}
       </div>
@@ -71,19 +76,19 @@ const ProductCard = (props: ProductCardProps) => {
           >
             Shop Now
           </button>
+
           <Link to={`/product/${props.id}`}>
-            <button className="bg-blue-600 text-white px-3 py-1 rounded-lg mt-2">
-              View Details
-            </button>
+            <button className={styles.viewBtn}>View Details</button>
           </Link>
 
+          
           <button
-            className={`${styles.wishlistBtn} ${
-              isFavorite ? styles.active : ""
+            className={`${styles.wishlistIcon} ${
+              isInWishlist ? styles.active : ""
             }`}
-            onClick={() => toggleWishlist(productItem)} 
+            onClick={() => toggleWishlist(productItem)}
           >
-            ❤️
+            {isInWishlist ? "❤️" : "♡"}
           </button>
         </div>
       </div>

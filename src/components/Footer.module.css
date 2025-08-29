@@ -84,3 +84,16 @@ body {
 .card:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .footerLeft img { max-width: 120px; }
+  .footerCenter { order: 2; }
+  .footerRight { order: 3; flex-direction: row; gap: 16px; justify-content: center; }
+}
+

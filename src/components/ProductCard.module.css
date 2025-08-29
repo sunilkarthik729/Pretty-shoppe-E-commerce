@@ -152,7 +152,7 @@
 }
 
 .wishlistBtn {
-  background: transparent;
+ 
   border: none;
   cursor: pointer;
   font-size: 24px;
@@ -161,7 +161,7 @@
 
 .wishlistBtn.active {
   color: red;
-  animation: bounce 0.4s;
+  
 }
 
 @keyframes bounce {
@@ -191,4 +191,122 @@ body {
 
 .card:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+/* Make card fluid */
+.card {
+  width: 100%;
+  max-width: 320px; /* desktop card limit */
+  margin: 0 auto;
+}
+
+/* Image becomes responsive height using aspect ratio */
+.imageWrapper {
+  height: auto;
+  aspect-ratio: 4 / 3; /* keeps consistent ratio */
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Price & buttons: stack on small screens */
+.priceRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Make buttons full-width under 480px */
+@media (max-width: 480px) {
+  .card { max-width: 260px; }
+  .shopBtn, .wishlistBtn, .finalPrice, .price {
+    width: 100%;
+  }
+  .priceRow { flex-direction: column; align-items: stretch; }
+  .desc { height: auto; } /* allow description to wrap */
+}
+.viewBtn {
+  background: #2563eb;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  margin-top: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.viewBtn:hover {
+  background: #1d4ed8;
+}
+.wishlistBtn {
+  background: #f8f8f8;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  margin-top: 0.5rem;
+}
+
+
+.wishlistBtn:hover {
+  background: #ffefef;
+  border-color: #ff4d4f;
+  color: #d90429;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 77, 79, 0.25);
+}
+
+
+.wishlistBtn:active {
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+
+.wishlistBtn.active {
+  background: #ffe5e5;
+  color: #d90429;
+  border-color: #d90429;
+}
+/* Small floating heart button */
+.wishlistIcon {
+         /* 👈 to place over product image */
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  z-index: 2;
+}
+
+.wishlistIcon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.wishlistIcon.active {
+  color: #e63946;       /* red heart */
+  border-color: #e63946;
+  background: #ffe5e5;
 }

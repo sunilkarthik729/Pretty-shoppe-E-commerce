@@ -63,7 +63,7 @@ const Home: React.FC<HomeProps>  = ({theme}) => {
           Your browser does not support the video tag.
         </video>
         Overlay text + button
-        <div className={styles.overlay}>
+        <div className={styles.banneroverlay}>
           <h1>Elevate your Style</h1>
           <p>
             Discover the perfect outfit that blend style with durability.
@@ -135,7 +135,7 @@ const Home: React.FC<HomeProps>  = ({theme}) => {
           })}
         </div>
       </section>
-      <h2>Sections</h2>
+      <h2 className={styles.bestSeller}>Sections</h2>
       <section className={styles.collectionsSection}>
         <div className={styles.collectionCard}>
           <div className={`${styles.collectionImg} ${styles.menImg}`}></div>

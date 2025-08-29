@@ -4,11 +4,16 @@ import Header from "./components/Header";
 import MainRouter from "./router";
 import { useState, useEffect } from "react";
 import WelcomeLoader from "./components/WelcomeLoader";
+import { useAuth } from "./context/AuthContext";
+import React from "react";
+import Login from "./pages/Login/Login";
+  
 
 function App() {
     const [theme, setTheme] = useState<"light" | "dark">("light");
     const [showSplash, setShowSplash] = useState(true);
-
+    const { isAuthenticated } = useAuth();
+  const [loading, setLoading] = React.useState(true);
   const toggleTheme = () => {
     setTheme(prev => (prev === "light" ? "dark" : "light"));
   };
@@ -18,19 +23,15 @@ function App() {
     if (savedTheme) setTheme(savedTheme);
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-  useEffect(() => {
-  document.body.className = theme;
-}, [theme]);
-     useEffect(() => {
-    const t = setTimeout(() => setShowSplash(false), 3200); // backup hide
-    return () => clearTimeout(t);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000); // simulate loader
+    return () => clearTimeout(timer);
   }, []);
-    if (showSplash) {
-    return <WelcomeLoader duration={2000} quoteInterval={1800} />;
-  }
+
+  if (loading) return <WelcomeLoader />;
+
+  if (!isAuthenticated) return <Login theme={"light"} />;
 
 
   return (
